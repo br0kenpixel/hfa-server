@@ -33,6 +33,9 @@ pub fn list(path: PathBuf) -> Result<Json<Vec<FileMeta>>, Status> {
     if !path.exists() {
         return Err(Status::NotFound);
     }
+    if !path.is_dir() {
+        return Err(Status::BadRequest);
+    }
 
     let entries = fs::read_dir(path)
         .unwrap()
