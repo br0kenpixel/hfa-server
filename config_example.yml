@@ -1,0 +1,9 @@
+username: "admin"
+password: "admin"
+
+# Maximum upload size in bytes
+max-upload-size: 4294967296
+# Whether to allow / access
+allow-index: true
+# Blocked methods
+blocked-methods: []
