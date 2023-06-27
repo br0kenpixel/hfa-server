@@ -12,12 +12,12 @@ use std::{
 use tokio::io::{AsyncReadExt, AsyncSeekExt};
 
 #[get("/")]
-pub fn index() -> Result<&'static str, Status> {
-    if CONFIG.get().unwrap().allow_index {
-        Ok("Hello, world!")
-    } else {
-        Err(Status::NotFound)
+pub fn index() -> Result<String, Status> {
+    if !CONFIG.get().unwrap().allow_index {
+        return Err(Status::NotFound);
     }
+
+    Ok(format!("hfa-server v{}", env!("CARGO_PKG_VERSION")))
 }
 
 #[get("/list/<path..>")]
