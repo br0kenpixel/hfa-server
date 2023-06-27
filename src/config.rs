@@ -4,6 +4,10 @@ use serde::Deserialize;
 pub struct Configuration {
     pub username: String,
     pub password: String,
+    #[serde(rename = "force-auth")]
+    pub force_auth: bool,
+    #[serde(rename = "allow-hidden-files")]
+    pub allow_hidden_files: bool,
     #[serde(rename = "max-upload-size")]
     pub max_upload_size: u64,
     #[serde(rename = "allow-index")]

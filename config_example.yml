@@ -1,6 +1,11 @@
 username: "admin"
 password: "admin"
 
+# Whether to enable basic auth using username and password specified above
+force-auth: false
+# Whether to allow working with dot files
+# Setting this to false will exempt dot files from list operationa and will not allow to upload/download them.
+allow-hidden-files: true
 # Maximum upload size in bytes
 max-upload-size: 4294967296
 # Whether to allow / access
